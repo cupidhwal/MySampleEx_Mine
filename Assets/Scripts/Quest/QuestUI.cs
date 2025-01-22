@@ -43,6 +43,8 @@ namespace MySampleEx
             goalText.text = quest.questGoal.currentAmount.ToString() + " / " + quest.questGoal.goalAmount.ToString();
             rewardGoldText.text = quest.rewardGold.ToString();
             rewardExpText.text = quest.rewardExp.ToString();
+            Debug.Log(quest.rewardExp);
+            Debug.Log(quest.rewardItem);
 
             if (quest.rewardItem >= 0)
             {
@@ -82,6 +84,17 @@ namespace MySampleEx
             acceptButton.SetActive(false);
             giveupButton.SetActive(false);
             okButton.SetActive(false);
+        }
+
+        public void OpenQuestUI()
+        {
+            if (QuestManager.Instance.currentQuest == null)
+            {
+                //
+                return;
+            }
+
+            SetQuestUI(QuestManager.Instance.currentQuest);
         }
     }
 }

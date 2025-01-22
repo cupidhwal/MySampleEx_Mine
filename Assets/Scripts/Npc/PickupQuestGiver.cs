@@ -32,6 +32,7 @@ namespace MySampleEx
                         number = quest.number,
                         npcNumber = quest.npcNumber,
                         name = quest.name,
+                        description = quest.description,
                         dialogIndex = quest.dialogIndex,
                         level = quest.level,
 
@@ -63,6 +64,8 @@ namespace MySampleEx
                 Debug.Log("모든 퀘스트 클리어!");
                 return;
             }
+
+            QuestManager.Instance.currentQuest = quests[0];
 
             switch (quests[0].questState)
             {

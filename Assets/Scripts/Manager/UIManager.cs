@@ -71,6 +71,8 @@ namespace MySampleEx
         public void OpenQuestUI()
         {
             Toggle(questUI.gameObject);
+            questUI.OnCloseQuest += CloseQuestUI;
+            questUI.OpenQuestUI();
         }
 
         public void CloseQuestUI()
